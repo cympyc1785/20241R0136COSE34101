@@ -520,7 +520,7 @@ int RR(Scheduled_Process result[], int time_quantum){
         run_queue[p_idx].arrival_time = result[result_num-1].end_time;
         run_queue[p_idx].burst_time -= time_quantum;
 
-        if (run_queue[p_idx].burst_time < 0){
+        if (run_queue[p_idx].burst_time <= 0){
             // Pop process from tmp_processes array
             Pop_Process(run_queue, cur_process.idx, &run_queue_num);
         }
