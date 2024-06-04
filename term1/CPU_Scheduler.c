@@ -518,7 +518,7 @@ int RR(Scheduled_Process result[], int time_quantum){
         // Modify process info (similar to pop & push)
         int p_idx = Get_Process_Idx_By_PID(run_queue, cur_process.pid, run_queue_num);
         run_queue[p_idx].arrival_time = result[result_num-1].end_time;
-        run_queue[p_idx].burst_time -= time_quantum;
+        run_queue[p_idx].burst_time -= burst_time;
 
         if (run_queue[p_idx].burst_time <= 0){
             // Pop process from tmp_processes array
